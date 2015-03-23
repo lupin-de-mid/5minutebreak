@@ -261,7 +261,7 @@ alarmtime = 5;
             return;
         }
 
-        PlayAlarmSound();
+     //   PlayAlarmSound();
 
         alarmframe = new AlarmFrame<TrayIcon>(this);
 
@@ -386,11 +386,11 @@ alarmtime = 5;
     void DisplayBalloon(wchar_t* title, wchar_t* text)
     {
         notifyicon.uFlags = NIF_INFO;
-        if (WinVersionMinimum(WINVERSION_XPSP2)) {
-            notifyicon.dwInfoFlags = NIIF_USER; // will use notifyicon.hIcon
-        } else {
+       // if (WinVersionMinimum(WINVERSION_XPSP2)) {
+         //   notifyicon.dwInfoFlags = NIIF_USER; // will use notifyicon.hIcon
+       // } else {
             notifyicon.dwInfoFlags = NIIF_INFO; // an information icon
-        }
+       // }
         notifyicon.uTimeout = 0;
 
         wcsncpy_s(notifyicon.szInfo, _countof(notifyicon.szInfo), text, _TRUNCATE);
